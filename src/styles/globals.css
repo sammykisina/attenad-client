@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Sofia_Sans_Extra_Condensed";
+  src: url("../assets/fonts/Sofia_Sans_Extra_Condensed/static/SofiaSansExtraCondensed-Regular.ttf");
+  font-family: 500;
+}
+
+@layer base {
+  * {
+    @apply font-Sofia_Sans_Extra_Condensed text-lg;
+  }
+
+  body {
+    @apply bg-white text-primary;
+  }
+
+  /* Modifying the scroll bar */
+  ::-webkit-scrollbar {
+    width: 16px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #edf2f7;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 100vh;
+    border: 3px solid #edf2f7;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+  }
+}
+
+:root {
+  --transition-cubic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@layer components {
+  .input {
+    @apply h-10 w-full border-b-2 border-secondary bg-transparent placeholder-transparent scrollbar-hide focus:border-secondary focus:outline-none;
+  }
+
+  .input_label {
+    @apply absolute left-0 -top-3.5 text-primary  transition-all peer-placeholder-shown:top-0 peer-placeholder-shown:text-base peer-placeholder-shown:text-primary peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-primary;
+  }
+
+  .icon {
+    @apply h-6 w-6;
+  }
+
+  /* drop down */
+  .dropdown_content {
+    @apply absolute top-[calc(100%+5px)] right-0 overflow-hidden rounded-xl   bg-white px-[2px] py-[10px] shadow;
+  }
+  .dropdown_content {
+    transform-origin: top right;
+    transform: scale(0);
+    transition: transform 0.3s ease 0s;
+  }
+  .dropdown_content.active {
+    transform: scale(1);
+    transition: transform 0.5s var(--transition-cubic);
+  }
+
+  .checklist_group_content {
+    @apply absolute top-[calc(100%+5px)] left-0 z-50 overflow-hidden rounded-xl   bg-white px-[2px] py-[10px]  shadow;
+  }
+
+  .checklist_group_content {
+    transform-origin: top left;
+    transform: scale(0);
+    transition: transform 0.3s ease 0s;
+  }
+
+  .checklist_group_content.active {
+    transform: scale(1);
+    transition: transform 0.5s var(--transition-cubic);
+  }
+
+  /* widget */
+  .widget-wrapper {
+    @apply invisible fixed top-0 -right-full  z-50 grid h-full  w-full  transform place-items-end bg-[#00000080] pt-4 transition-all duration-300 ease-in;
+  }
+
+  .widget-wrapper.show {
+    @apply visible right-0 z-40;
+  }
+
+  .widget {
+    @apply relative h-fit max-w-[500px] overflow-clip rounded-tl-[2rem] bg-white;
+  }
+}
