@@ -10,7 +10,19 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>Home</main>
+      <main className="flex h-full flex-col items-center justify-center gap-3 border">
+        <span className="text-xl tracking-wide">
+          APU attendance system with RFID technology
+        </span>
+
+        <div className="flex flex-col items-center">
+          <span>By</span>
+
+          <span className="bg-secondary px-4  tracking-widest">
+            Dylan Toh Voo Chieng
+          </span>
+        </div>
+      </main>
     </>
   );
 };
