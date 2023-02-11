@@ -43,6 +43,7 @@ export { default as Course } from "./UI/tab/components/Course";
 export { default as Module } from "./UI/tab/components/Module";
 export { default as StudentProfileInfo } from "./UI/tab/components/StudentProfileInfo";
 export { default as StudentSchoolInfo } from "./UI/tab/components/StudentSchoolInfo";
+export { default as StudentAttendances } from "./UI/tab/components/StudentAttendances";
 
 /**
  * Dropdown components

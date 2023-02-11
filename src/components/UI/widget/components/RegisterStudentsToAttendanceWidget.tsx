@@ -77,7 +77,7 @@ const RegisterStudentsToAttendanceWidget = () => {
                 onChange={(event) => setStudentCard(event.target.value)}
               />
 
-              <Button
+              {/* <Button
                 title={
                   isRegisteringStudentToAttendance ? (
                     <SpinnerLoader color="fill-white" size="h-4 w-5" />
@@ -95,7 +95,7 @@ const RegisterStudentsToAttendanceWidget = () => {
                   setStudentCard(scanForCard());
                 }}
                 disabled={isRegisteringStudentToAttendance}
-              />
+              /> */}
 
               <label className="input_label">Card ID</label>
             </div>

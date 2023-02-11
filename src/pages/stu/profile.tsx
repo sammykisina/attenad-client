@@ -1,8 +1,13 @@
-import { StudentProfileInfo, StudentSchoolInfo, Tab } from "@/components";
+import {
+  StudentAttendances,
+  StudentProfileInfo,
+  StudentSchoolInfo,
+  Tab,
+} from "@/components";
 import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { HiAcademicCap, HiUser } from "react-icons/hi2";
+import { HiAcademicCap, HiBookmark, HiUser } from "react-icons/hi2";
 
 const Users = () => {
   /**
@@ -20,6 +25,12 @@ const Users = () => {
       label: "ProfileInfo",
       content: <StudentProfileInfo />,
       icon: <HiUser className="icon" />,
+    },
+
+    {
+      label: "Attendances",
+      content: <StudentAttendances />,
+      icon: <HiBookmark className="icon" />,
     },
   ];
 

@@ -18,6 +18,8 @@ const StudentSchoolInfo = () => {
   const { profile, isFetchingProfile } = useAuth();
   const { generateAvatar } = appUtils;
 
+  console.log("profile", profile);
+
   return (
     <section className="h-[31rem] divide-y overflow-scroll  py-4 scrollbar-hide">
       {/* personal info */}

@@ -71,6 +71,28 @@ const useAttendance = () => {
     []
   );
 
+  const studentAttendanceTableColumns = useMemo(
+    () => [
+      {
+        Header: "Attendance",
+        accessor: "name",
+      },
+      {
+        Header: "Intake",
+        accessor: "intake",
+      },
+      {
+        Header: "Course",
+        accessor: "course",
+      },
+      {
+        Header: "Module",
+        accessor: "module",
+      },
+    ],
+    []
+  );
+
   /**
    * hook functions
    */
@@ -203,11 +225,20 @@ const useAttendance = () => {
           contentDeliveryType: attendance?.attributes?.contentDeliveryType,
           tutorialGroup: attendance?.attributes?.tutorialGroup ?? "-",
           createdBy: attendance?.relationships?.owner?.attributes?.email,
+          intake: attendance?.relationships?.intake
+            ? attendance?.relationships?.intake?.attributes?.name
+            : "",
+          course: attendance?.relationships?.course
+            ? attendance?.relationships?.course?.attributes?.name
+            : "",
+          module: attendance?.relationships?.module
+            ? attendance?.relationships?.module?.attributes?.name
+            : "",
           createdAt: format(
             new Date(attendance?.attributes?.createdAt),
             "EE, MMM d, yyy"
           ),
-          studentCount: attendance?.relationships?.students.length,
+          studentCount: attendance?.relationships?.students?.length,
           actions: (
             <div className="flex gap-2">
               <Button
@@ -263,6 +294,7 @@ const useAttendance = () => {
     isFetchingStudentCards,
     isRegisteringStudentToAttendance,
     registerStudentToAttendance,
+    studentAttendanceTableColumns,
   };
 };
 
