@@ -35,7 +35,10 @@ const CreateOrEditStudentWidget = () => {
   );
 
   const [cardID, setCardID] = useState("");
-  const [selectedRole, setSelectedRole] = useState({ name: "", value: "" });
+  const [selectedRole, setSelectedRole] = useState({
+    name: "Student",
+    value: "student",
+  });
   const [selectedCourse, setSelectedCourse] = useState({ name: "", value: "" });
   const [selectedIntake, setSelectedIntake] = useState({ name: "", value: "" });
 
@@ -184,13 +187,13 @@ const CreateOrEditStudentWidget = () => {
                   onChange={(event) => setCardID(event.target.value)}
                 />
 
-                <button
+                {/* <button
                   className="flex h-[38px] items-center justify-center gap-[6px] whitespace-nowrap  rounded-full bg-secondary px-4 py-2 text-[14px] text-white focus:outline-none"
                   type="button"
                   onClick={() => setCardID(generateCardId())}
                 >
                   Scan
-                </button>
+                </button> */}
 
                 <label className="input_label">Card ID</label>
               </div>
@@ -205,6 +208,7 @@ const CreateOrEditStudentWidget = () => {
                 select_panel_styles="max-h-[10rem] bg-white border border-dark shadow-md"
                 selected={selectedRole}
                 setSelected={setSelectedRole}
+                disable={true}
               />
             </div>
           </div>

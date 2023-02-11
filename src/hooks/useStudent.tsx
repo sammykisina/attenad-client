@@ -36,10 +36,10 @@ const useStudent = () => {
         Header: "Email",
         accessor: "email",
       },
-      {
-        Header: "Role",
-        accessor: "role",
-      },
+      // {
+      //   Header: "Role",
+      //   accessor: "role",
+      // },
       {
         Header: "Info",
         columns: [
@@ -47,11 +47,11 @@ const useStudent = () => {
             Header: "Physical Card Id",
             accessor: "physicalCardId",
           },
-          {
-            Header: "Status",
-            accessor: "status",
-            Cell: StatusCell,
-          },
+          // {
+          //   Header: "Status",
+          //   accessor: "status",
+          //   Cell: StatusCell,
+          // },
           {
             Header: "Created By",
             accessor: "createdBy",

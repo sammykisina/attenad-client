@@ -48,10 +48,10 @@ const Lecturers = () => {
     <section className="h-full">
       <div className="flex items-center justify-between">
         {/* title */}
-        <TabTitle title="Manage Lectures" />
+        <TabTitle title="Manage Staff" />
 
         <Button
-          title="Create A Lecturer"
+          title="Create Staff"
           type="medium"
           intent="primary"
           purpose={() => setShowCreateOrEditLecturerWidget(true)}
@@ -73,7 +73,7 @@ const Lecturers = () => {
           />
         ) : (
           <div className="flex h-[32rem] flex-col items-center justify-center gap-3 rounded-[2rem] border xs:h-[27.5rem]  lg:h-[28.5rem]">
-            No Lectures Yet.
+            No Staff Yet.
           </div>
         )}
       </section>

@@ -7,10 +7,6 @@ const roles = [
     name: "lecturer",
     value: "lecturer",
   },
-  {
-    name: "student",
-    value: "student",
-  },
 ];
 
 const userManagementConstants = {

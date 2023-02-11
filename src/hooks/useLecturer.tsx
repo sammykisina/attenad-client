@@ -40,18 +40,18 @@ const useLecturer = () => {
         Header: "Email",
         accessor: "email",
       },
-      {
-        Header: "Role",
-        accessor: "role",
-      },
+      // {
+      //   Header: "Role",
+      //   accessor: "role",
+      // },
       {
         Header: "Info",
         columns: [
-          {
-            Header: "Status",
-            accessor: "status",
-            Cell: StatusCell,
-          },
+          // {
+          //   Header: "Status",
+          //   accessor: "status",
+          //   Cell: StatusCell,
+          // },
           {
             Header: "Created By",
             accessor: "createdBy",

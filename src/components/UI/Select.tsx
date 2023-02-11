@@ -15,6 +15,7 @@ interface SelectProps {
   options: SelectionOption[] | string[];
   multiple: boolean;
   select_panel_styles: string;
+  disable?: boolean;
 }
 
 const Select: FC<SelectProps> = ({
@@ -27,6 +28,7 @@ const Select: FC<SelectProps> = ({
   select_panel_styles,
   select_label,
   select_label_styles,
+  disable,
 }) => {
   /**
    * Component states
@@ -140,7 +142,7 @@ const Select: FC<SelectProps> = ({
           className={`hover:bg-dark  flex items-center justify-center rounded-full  duration-300 hover:bg-secondary hover:text-white ${
             isSelectPanelOpen &&
             "rotate-180 rounded-full  bg-secondary text-white"
-          }`}
+          }  ${disable && "hidden"}`}
         >
           <HiChevronDown className="h-4 w-4" />
         </span>
@@ -149,7 +151,9 @@ const Select: FC<SelectProps> = ({
       <ul
         className={`absolute left-0 top-[calc(100%+.25rem)] z-50 flex h-fit  w-full  flex-col
          gap-2 overflow-y-auto rounded-md p-[5px]  text-sm
-         ${select_panel_styles} ${isSelectPanelOpen ? "block" : "hidden"}`}
+         ${select_panel_styles} ${isSelectPanelOpen ? "block" : "hidden"} ${
+          disable && "hidden"
+        }`}
       >
         {options.map((option, option_index) => (
           <li
