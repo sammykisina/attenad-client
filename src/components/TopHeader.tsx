@@ -40,8 +40,8 @@ const TopHeader = () => {
         title = "Lecturers";
         break;
 
-      case "/ad/school":
-        title = "School";
+      case "/ad/apu":
+        title = "APU";
         break;
 
       case "/lec/profile":

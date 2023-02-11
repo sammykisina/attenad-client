@@ -5,11 +5,9 @@ import {
   HiOutlineAcademicCap,
   HiOutlineBookmark,
   HiOutlineHome,
-  HiOutlinePaperAirplane,
   HiOutlineUserCircle,
   HiOutlineUserGroup,
   HiOutlineUsers,
-  HiPaperAirplane,
   HiUserCircle,
   HiUserGroup,
   HiUsers,
@@ -27,10 +25,10 @@ const commonRoutes = [
 
 const adminRoutes: Route[] = [
   {
-    name: "School",
+    name: "APU",
     inactiveIcon: <HiOutlineAcademicCap className="icon" />,
     activeIcon: <HiAcademicCap className="icon" />,
-    to: "/ad/school",
+    to: "/ad/apu",
   },
   {
     name: "Students",
